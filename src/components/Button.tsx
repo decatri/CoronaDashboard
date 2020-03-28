@@ -13,16 +13,16 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export default function CustomButton(
-  onClick: () => void,
-  color: PropTypes.Color,
-  text: string
-) {
+export default function CustomButton(props: {
+  onClick: () => void;
+  color: PropTypes.Color;
+  text: string;
+}) {
   const classes = useStyles();
   return (
-    <div className={classes.root} onClick={onClick}>
-      <Button variant="outlined" color={color}>
-        {text}
+    <div className={classes.root} onClick={props.onClick}>
+      <Button variant="outlined" color={props.color}>
+        {props.text}
       </Button>
     </div>
   );
